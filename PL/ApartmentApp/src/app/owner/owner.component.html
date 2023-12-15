@@ -1,1 +1,13 @@
-<p>owner works!</p>
+<!-- <h1>{{onSubmit()}}</h1> -->
+<form (ngSubmit)="onSubmit()">
+    <label for="id">Id:</label>
+    <input type="number" id="id" name="id" [(ngModel)]="id">
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="name">
+  
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone" [(ngModel)]="phone">
+  
+    <button type="submit">Submit</button>
+  </form>
