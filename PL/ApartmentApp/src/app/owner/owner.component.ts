@@ -8,25 +8,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./owner.component.css']
 })
 export class OwnerComponent {
-  id:number=0;
-  name: string='';
-  phone: string='';
-
   
-  constructor(private http: HttpClient,private router:Router) {}
-
-  onSubmit() {
-    const url = 'https://localhost:7003/api/createowner';
-    const data = { id:this.id,name: this.name, phone: this.phone };
-
-    this.http.post(url, data).subscribe(response => {
-      console.log(response);
-    
-    });
-    this.router.navigate(['/SignIn'])
-    
+    fNumber: number=0;
+    pName: string='';
+    pNo: string='';
+  
+    constructor(private http: HttpClient,private router:Router) { }
+  
+    createOwner() {
+      const url = 'https://localhost:7003/api/createowner';
+      const data = {
+        FlatNumber: this.fNumber,
+        Name: this.pName,
+        PhoneNumber: this.pNo
+      };
+      this.http.post(url, data).subscribe((data)=>console.log(`Insert successful for ${this.pName}`));
+      // this.router.navigate(['/SignIn'])
+    }
   }
-}
+  
 
 
 
