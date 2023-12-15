@@ -1,9 +1,10 @@
+<form (submit)="signIn()">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" [(ngModel)]="username" required>
 
-<div>
-    <h2>Apartment List</h2>
-    <ul>
-      <li *ngFor="let apartment of apartments">
-        {{ apartment.name }}
-      </li>
-    </ul>
-  </div>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" [(ngModel)]="password" required>
+
+  <button type="submit">Sign In</button>
+</form>
+
